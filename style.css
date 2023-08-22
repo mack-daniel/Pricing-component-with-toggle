@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+:root {
+  --linear-gradient: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+main {
+  background-color: var(--very-light-grayish-blue);
+}
+
+.toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.toggler-btn {
+  height: 30px;
+  width: 50px;
+  background: linear-gradient(var(--linear-gradient));
+  position: relative;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.toggler-btn::after {
+  content: "";
+  height: 90%;
+  width: 25px;
+  border-radius: 50%;
+  position: absolute;
+  right: 2%;
+  background-color: var(--very-light-grayish-blue);
+  margin: 3% 0;
+}
+.toggler-btn.active::after {
+  left: 2%;
+}
+.col-lg:nth-child(odd) .card button,
+.col-lg:nth-child(even) .card {
+  background: linear-gradient(var(--linear-gradient));
+}
+.col-lg:nth-child(even) .card button {
+  color: var(--grayish-blue);
+}
+.col-lg:nth-child(odd) .card button:hover {
+  background: transparent;
+  border: 1px solid var(--dark-grayish-blue) !important;
+  color: var(--grayish-blue) !important;
+}
+.col-lg:nth-child(even) .card button:hover {
+  background: transparent;
+  border: 1px solid var(--very-light-grayish-blue) !important;
+  color: var(--very-light-grayish-blue) !important;
+}
